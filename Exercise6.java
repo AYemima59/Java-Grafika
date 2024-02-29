@@ -23,38 +23,38 @@ public class Exercise6 extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // Draw sun
+        // matahari
         g2d.setColor(Color.GRAY);
         g2d.fill(new Ellipse2D.Double(ORBIT_RADIUS - SUN_RADIUS, ORBIT_RADIUS - SUN_RADIUS, 2 * SUN_RADIUS, 2 * SUN_RADIUS));
 
-        // Calculate planet position
+        // planet
         double planetX = ORBIT_RADIUS + ORBIT_RADIUS * Math.cos(planetAngle);
         double planetY = ORBIT_RADIUS - ORBIT_RADIUS * Math.sin(planetAngle); // Minus because y-axis is inverted
 
-        // Draw planet orbit
+        // garis planet
         g2d.setColor(Color.WHITE);
         g2d.draw(new Ellipse2D.Double(0, 0, 2 * ORBIT_RADIUS, 2 * ORBIT_RADIUS));
 
-        // Draw planet
+        // planet
         g2d.setColor(Color.LIGHT_GRAY);
         g2d.fill(new Ellipse2D.Double(planetX - PLANET_RADIUS, planetY - PLANET_RADIUS, 2 * PLANET_RADIUS, 2 * PLANET_RADIUS));
 
-        // Draw point
+        // point 2d
         double pointX = planetX + PLANET_RADIUS * Math.cos(-planetAngle);
         double pointY = planetY + PLANET_RADIUS * Math.sin(-planetAngle); // Minus because y-axis is inverted
         g2d.setColor(Color.GRAY);
         g2d.fill(new Ellipse2D.Double(pointX - 3, pointY - 3, 6, 6));
 
-        // Draw the letter Y and P
+        // huruf y(yemima) p(puturuhu)
         Font font = new Font("Arial", Font.PLAIN, 50);
         g2d.setFont(font);
         g2d.setColor(Color.MAGENTA);
 
-        // Calculate the intermediate point between Y and P
+        // jarak y&p
         double interX = 0.5 * (pointX + ORBIT_RADIUS);
         double interY = 0.5 * (pointY + ORBIT_RADIUS);
 
-        // Draw the letter Y
+        // y
         String letterY = "Y";
         FontMetrics fm = g2d.getFontMetrics();
         Rectangle2D boundsY = fm.getStringBounds(letterY, g2d);
@@ -62,7 +62,7 @@ public class Exercise6 extends JPanel {
         double yY = ORBIT_RADIUS + boundsY.getHeight() / 2;
         g2d.drawString(letterY, (float) xY, (float) yY);
 
-        // Draw the letter P
+        // p
         String letterP = "P";
         Rectangle2D boundsP = fm.getStringBounds(letterP, g2d);
         double xP = interX - boundsP.getWidth() / 2;
