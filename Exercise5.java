@@ -37,12 +37,12 @@ public class Exercise5 extends JPanel {
         Graphics2D g2d = (Graphics2D) g.create();
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // Draw the lines
+        // gambar garis
         g2d.setColor(Color.BLACK);
         g2d.drawLine(0, yPosition1, getWidth(), yPosition1);
         g2d.drawLine(0, yPosition2, getWidth(), yPosition2);
 
-        // Draw the heartbeats
+        // gambar garis jantung
         drawHeartbeat(g2d, xPosition1, yPosition1);
         drawHeartbeat(g2d, xPosition2, yPosition2);
 
