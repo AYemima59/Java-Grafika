@@ -23,19 +23,19 @@ public class Exercise2 extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // Draw sun
+        // matahari
         g2d.setColor(Color.BLACK);
         g2d.fillOval(ORBIT_RADIUS - SUN_RADIUS, ORBIT_RADIUS - SUN_RADIUS, 2 * SUN_RADIUS, 2 * SUN_RADIUS);
 
-        // Calculate planet position
+        // planet radius
         int planetX = (int) (ORBIT_RADIUS + ORBIT_RADIUS * Math.cos(planetAngle));
         int planetY = (int) (ORBIT_RADIUS - ORBIT_RADIUS * Math.sin(planetAngle)); // Minus because y-axis is inverted
 
-        // Draw planet orbit
+        // garis planet
         g2d.setColor(Color.WHITE);
         g2d.drawOval(0, 0, 2 * ORBIT_RADIUS, 2 * ORBIT_RADIUS);
 
-        // Draw planet
+        // planet
         g2d.setColor(Color.GREEN);
         g2d.fillOval(planetX - PLANET_RADIUS, planetY - PLANET_RADIUS, 2 * PLANET_RADIUS, 2 * PLANET_RADIUS);
     }
