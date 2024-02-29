@@ -29,7 +29,7 @@ public class  Exercise1 extends JPanel {
         path.quadTo(x, y, x + arcWidth, y);
         path.closePath();
         
-        // Draw the path
+        // menggambar path 
         g2d.draw(path);
     }
     
